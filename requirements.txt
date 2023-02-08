@@ -1,0 +1,3 @@
+hashlib
+pycryptodome
+pycryptodomex
