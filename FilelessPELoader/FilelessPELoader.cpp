@@ -222,38 +222,32 @@ IMAGE_NT_HEADERS* ntHeader = NULL;
 
 LPWSTR hookGetCommandLineW()
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called: getcommandlinew");
     return sz_masqCmd_Widh;
 }
 
 LPSTR hookGetCommandLineA()
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called: getcommandlinea");
     return sz_masqCmd_Ansi;
 }
 
 char*** __cdecl hook__p___argv(void)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called: __p___argv");
     return &poi_masqArgvA;
 }
 
 wchar_t*** __cdecl hook__p___wargv(void)
 {
 
-    //BeaconPrintf(CALLBACK_OUTPUT, "called: __p___wargv");
     return &poi_masqArgvW;
 }
 
 int* __cdecl hook__p___argc(void)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called: __p___argc");
     return &int_masqCmd_Argc;
 }
 
 int hook__wgetmainargs(int* _Argc, wchar_t*** _Argv, wchar_t*** _Env, int _useless_, void* _useless)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called __wgetmainargs");
     *_Argc = int_masqCmd_Argc;
     *_Argv = poi_masqArgvW;
 
@@ -262,7 +256,6 @@ int hook__wgetmainargs(int* _Argc, wchar_t*** _Argv, wchar_t*** _Env, int _usele
 
 int hook__getmainargs(int* _Argc, char*** _Argv, char*** _Env, int _useless_, void* _useless)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called __getmainargs");
     *_Argc = int_masqCmd_Argc;
     *_Argv = poi_masqArgvA;
 
@@ -271,19 +264,16 @@ int hook__getmainargs(int* _Argc, char*** _Argv, char*** _Env, int _useless_, vo
 
 _onexit_t __cdecl hook_onexit(_onexit_t function)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called onexit!\n");
     return 0;
 }
 
 int __cdecl hookatexit(void(__cdecl* func)(void))
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "called atexit!\n");
     return 0;
 }
 
 int __cdecl hookexit(int status)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "Exit called!\n");
     //_cexit() causes cmd.exe to break for reasons unknown...
     ExitThread(0);
     return 0;
@@ -291,7 +281,6 @@ int __cdecl hookexit(int status)
 
 void __stdcall hookExitProcess(UINT statuscode)
 {
-    //BeaconPrintf(CALLBACK_OUTPUT, "ExitProcess called!\n");
     ExitThread(0);
 }
 void masqueradeCmdline()
