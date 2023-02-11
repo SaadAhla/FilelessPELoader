@@ -2,9 +2,6 @@
 
 Loading Remote AES Encrypted PE in memory , Decrypted it and run it
 
-### Building
-
-Run build.bat if you are building it first time, then you can build it after changes from  **VS**  command prompt.
 
 ### Usage :
 ![CipherKey](https://raw.githubusercontent.com/illegal-instruction-co/FilelessPELoader/main/assets/1.png)
