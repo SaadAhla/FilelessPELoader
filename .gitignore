@@ -1,0 +1,8 @@
+﻿build
+*.sln
+*.vcxproj
+*.user
+*.sln
+FilelessPELoader/FilelessPELoader.vcxproj
+*.filters
+*.user
