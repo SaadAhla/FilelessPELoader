@@ -6,3 +6,8 @@
 FilelessPELoader/FilelessPELoader.vcxproj
 *.filters
 *.user
+*.sln
+*.sln
+*.vcxproj
+*.filters
+*.user
